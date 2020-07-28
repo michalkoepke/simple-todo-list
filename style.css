@@ -1,0 +1,38 @@
+body {
+    background-image: url(./img/abstr-4.jpg);
+}
+.container {
+    max-width:50%;
+}
+input[type="text"],
+input[type="text"]:focus {
+    /* color: #646e6f; */
+    border: none;
+    background: #c4e6f3;
+    /* max-width: 400px; */
+}
+.todos li {
+    background: #e8f8ff;
+    color: #4d6d77;
+}
+.delete {
+    cursor: pointer;
+}
+
+* {
+    font-family: "Montserrat", sans-serif;
+    
+}
+
+header {
+    color: #3c7990;
+}
+
+form {
+    
+    color: #778d94;
+}
+
+.filtered {
+    display: none !important;
+}
