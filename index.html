@@ -1,60 +1,56 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Todos</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Todos</title>
 
-    <script src="https://kit.fontawesome.com/f050f429e4.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/f050f429e4.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="container">
-        <header class="text-center my-5 mt-5">
-            <h1 class="m-4 p-4">Simple Todo List</h1>
-            <form class="search">
-              <input class="form-control m-auto" type="text" name="search" placeholder="search todos" />
-            </form>
-          </header>
+  <div class="container">
+    <header class="text-center my-5 mt-5">
+      <h1 class="m-4 p-4">JS Simple Todo List</h1>
+
+      <form class="search">
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text"><i class="fas fa-search"></i></div>
+          </div>
+          <input class="form-control m-auto" type="text" name="search" placeholder="search todos" />
+        </div>
+      </form>
+    </header>
 
 
 
-          <ul class="list-group todos mx-auto">
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              <span>first placeholder todo</span>
-              <i class="far fa-trash-alt delete"></i>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              <span>second pleceholder todo</span>
-              <i class="far fa-trash-alt delete"></i>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              <span>third todo - add more below:)</span>
-              <i class="far fa-trash-alt delete"></i>
-            </li>
-          </ul>
+    <ul class="list-group todos mx-auto">
 
 
-          
+
+    </ul>
 
 
-          <form class="add text-center my-4">
-            <label class="text-muted">Add a new todo</label>
-            <input class="form-control m-auto" type="text" name="dodaj" />
-          </form>
 
 
-    </div>
+
+    <form class="add text-center my-4">
+      <label>Add a new todo</label>
+      <input class="form-control m-auto" type="text" name="dodaj" placeholder="add todos" />
+    </form>
 
 
-    <script src="app.js"></script>
+  </div>
+
+
+  <script src="app.js"></script>
 </body>
 
 </html>
