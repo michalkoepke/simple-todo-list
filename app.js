@@ -24,14 +24,14 @@ const getValues = () => {
   
   if (!storedValues) {
     list.innerHTML = `
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-    <span>Add some todos</span><i class="far fa-trash-alt delete"></i></li>
+    <li class="list-group-item d-flex justify-content-between align-items-center p-0 mb-1">
+    <span class="px-3 my-3">Add some todos</span><i class="far fa-trash-alt delete p-4"></i></li>
 
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-    <span>Make a coffe</span><i class="far fa-trash-alt delete"></i></li>
+    <li class="list-group-item d-flex justify-content-between align-items-center p-0 mb-1">
+    <span class="px-3 my-3">Make a coffe</span><i class="far fa-trash-alt delete p-4"></i></li>
 
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-    <span>Start working:)</span><i class="far fa-trash-alt delete"></i></li>
+    <li class="list-group-item d-flex justify-content-between align-items-center p-0 mb-1">
+    <span class="px-3 my-3">Start working:)</span><i class="far fa-trash-alt delete p-4"></i></li>
     `;
   }
 
@@ -52,9 +52,9 @@ const generateTemplate = (todo) => {
 
   const html = `
     
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-    <span>${todo}</span>
-    <i class="far fa-trash-alt delete"></i>
+    <li class="list-group-item d-flex justify-content-between align-items-center p-0 mb-1">
+    <span class="px-3 my-3">${todo}</span>
+    <i class="far fa-trash-alt delete p-4"></i>
     </li>
     
     `;
@@ -99,6 +99,8 @@ addForm.addEventListener('submit', e => {
 });
 
 
+// ! USUWANIE TODOS Z LISTY
+
 // usuwanie elementów z listy z wykorzystaniem event delegation:
 // nasluchujemy clicka ogólnie w liscie, i jesli target to była ikona
 // trash, to usuwamy parent element, czyli list item li.
@@ -107,6 +109,7 @@ addForm.addEventListener('submit', e => {
 
 list.addEventListener('click', e => {
   if (e.target.classList.contains('delete')) {
+    console.log("clicked");
     e.target.parentElement.remove();
     store();
     
@@ -136,5 +139,57 @@ search.addEventListener('keyup', () => {
 
 
 });
+
+
+// ! zegar
+
+const clock = document.querySelector('.clock');
+
+const tick = () => {
+
+  const now = new Date();
+
+  console.log(dateFns.format(now, 'HH mm'));
+
+
+  const weekday = new Array(7);
+  weekday[0] = "Sunday";
+  weekday[1] = "Monday";
+  weekday[2] = "Tuesday";
+  weekday[3] = "Wednesday";
+  weekday[4] = "Thursday";
+  weekday[5] = "Friday";
+  weekday[6] = "Saturday";
+
+
+  let n = weekday[now.getDay()];
+  let day = document.querySelector('.day');
+  day.innerHTML = n;
+
+
+  // * czas - z uzyciem date-fns library:
+
+  const h = (dateFns.format(now, 'HH'));
+  const m = (dateFns.format(now, 'mm'));
+
+  // sekundy:
+
+  // const s = (dateFns.format(now, 'ss'));
+
+
+
+  const html = `
+    <span>${h}</span> :
+    <span>${m}</span>
+
+  `;
+
+  clock.innerHTML = html;
+
+};
+
+setInterval(tick, 1000);
+
+
 
 

@@ -3,21 +3,24 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-
+    box-sizing: border-box;
+    min-height: 100%;
+    padding: 0;
+    margin: 0;
 
     --main-txt-color: #344b52;
     --accent: #ffdcc6;
-    
+    --accent-2: #d2ebf3;
+    --hover: #f8ebda;
+    --sky-blue: #6c99a7;
 }
 
 
 
 input[type="text"],
 input[type="text"]:focus {
-    
     border: none;
     background: #fcfcfc;
-    
 }
 .todos li {
     background: #fcfcfc;
@@ -29,7 +32,6 @@ input[type="text"]:focus {
 
 * {
     font-family: "Montserrat", sans-serif;
-    
 }
 
 header {
@@ -37,21 +39,16 @@ header {
 }
 
 label {
-
     color: var(--main-txt-color);
-
 }
 
 form {
-    
     color: #344b52;
 }
 
 .search {
-
     color: #344b52;
 }
-
 
 .filtered {
     display: none !important;
@@ -60,3 +57,91 @@ form {
 h1 {
     color: var(--accent);
 }
+
+h1.dark {
+    color: var(--main-txt-color);
+}
+
+.fa-trash-alt {
+    background-color: var(--accent-2);
+}
+
+.fa-trash-alt:hover {
+    background-color: var(--hover);
+}
+
+/* zegar */
+
+.clock {
+    font-size: 3rem;
+    text-align: center;
+    color: var(--accent2);
+    font-family: arial;
+}
+
+.clock span {
+    padding: 0rem;
+}
+
+
+
+
+
+
+
+
+
+/* footer */
+
+footer {
+    
+
+    background-color: var(--sky-blue);
+    width: 100%;
+    height: auto;
+    color: var(--accent-2);
+}
+
+.special-link {
+    /* margin-bottom: 0.5rem; */
+    padding: 0.5rem;
+}
+
+.special-link:hover {
+    background-color: var(--accent-2);
+    color: var(--main-txt-color);
+    transition: 0.7s;
+    border-radius: 3px;
+    padding: 0.7rem 1.2rem;
+}
+
+.links-bottom-1 {
+    padding: 0rem 2rem;
+    color: var(--light2);
+    opacity: 1;
+}
+
+.links-bottom-2 {
+    padding: 0rem 2rem;
+    color: var(--light2);
+    opacity: 1;
+}
+
+.list-links {
+    text-decoration: none;
+    list-style-type: none;
+    margin-left: -3rem;
+    opacity: 1;
+}
+
+a {
+    color: var(--light3);
+}
+
+a:hover {
+    /* color: #29ABE2;
+    opacity: 1; */
+    text-decoration: none;
+}
+
+/* experimental */

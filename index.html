@@ -15,41 +15,129 @@
 
 <body>
 
-  <div class="container">
+
+  <!-- poczatek GLOWNEGO containera -->
+  <div class="container mb-0">
+
+
+
+
+
+
+
+
+
     <header class="text-center my-5 mt-5">
+
       <h1 class="m-4 p-4">JS Simple Todo List</h1>
+
+      <!-- karty -->
+
+      <div class="container row d-inline-flex justify-content-between p-0">
+
+        <div class="card col-md-8 col-sm-12 text-light text-left my-5 p-4 bg-transparent border-0">
+
+          <h4 class="mb-4">Hello, do some suff today! :)</h4>
+
+          This is a simple JS ToDo list. Feel free to use:) I have made it in process of learning JavaScript.
+          Have a nice and productive way - and don't forget to take breaks:)
+
+        </div>
+
+        <div class="card col-md-4 col-sm-12 text-light text-left my-5 p-4 bg-transparent border-0">
+
+          <h4 class="mb-2 text-center text-light day"></h4>
+          <div class="clock"></div>
+
+        </div>
+
+      </div>
+
+      <!-- karty -->
 
       <form class="search">
         <div class="input-group mb-2">
-          <div class="input-group-prepend">
-            <div class="input-group-text"><i class="fas fa-search"></i></div>
-          </div>
+          
           <input class="form-control m-auto" type="text" name="search" placeholder="search todos" />
         </div>
       </form>
     </header>
 
 
-
-    <ul class="list-group todos mx-auto">
-
-
-
-    </ul>
+    <ul class="list-group todos mx-auto"></ul>
 
 
 
-
-
-    <form class="add text-center my-4">
+    <form class="add text-center my-4 mb-5">
       <label>Add a new todo</label>
       <input class="form-control m-auto" type="text" name="dodaj" placeholder="add todos" />
     </form>
 
 
+
+
+
   </div>
+  <!-- koniec GlOWNEGO kontainera -->
 
 
+  <!-- <footer class="text-center d-flex flex-column justify-content-center">
+    <p class="mb-0">test test test</p> 
+  </footer> -->
+
+
+
+  <footer>
+
+    <div class="container d-flex flex-row flex-wrap justify-content-between py-5">
+
+      <div class="d-flex flex-column flex-grow-1 col-sm-12 col-md-12 col-lg-4 mb-5">
+
+
+
+        <h4 class="my-2">JS Simple ToDo List</h4>
+
+      </div>
+
+      <div class="d-flex flex-wrap mt-2">
+
+        <div class="links-bottom-1">
+          <h5 class="mb-5">My other web projects:</h3>
+
+            <ul class="list-links mt-4">
+
+              <li class="mb-3"><a class="special-link" href="https://michalkoepke.github.io/devlogy/index.html">Devlogy
+                  website</a></li>
+              <li class="mb-3"><a class="special-link" href="https://michalkoepke.github.io/BlueQuiz/index.html">Blue Quiz</a></li>
+              <li class="mb-3"><a class="special-link" href="https://michalkoepke.github.io/devlogy/index.html">Weather
+                  App</a></li>
+              <li class="mb-3"><a class="special-link"
+                  href="https://michalkoepke.github.io/devlogy/index.html">Interactive chat</a></li>
+
+
+            </ul>
+
+        </div>
+
+        <div class="links-bottom-2 light-text3">
+          <h5 class="mb-5">My graphic design:</h3>
+
+            <ul class="list-links">
+              <li class="mb-3"><a class="special-link" href="https://www.deviantart.com/michalkoepke/gallery">Graphic
+                  design portfolio</a></li>
+
+            </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/1.30.1/date_fns.js"></script>
   <script src="app.js"></script>
 </body>
 
