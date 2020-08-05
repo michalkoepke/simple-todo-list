@@ -1,3 +1,4 @@
+
 // wybieramy dolne pole do wpisywania nowego todo:
 
 const addForm = document.querySelector('.add');
@@ -11,8 +12,28 @@ const search = document.querySelector('.search input');
 const list = document.querySelector('.todos');
 
 
+// ! animacja
 
-// FUNKCJA UPDATE LOCAL STORAGE:
+const appear = () => {
+
+
+  setTimeout(() => {
+
+    let items = (list.querySelectorAll('.hidden'));
+
+    console.log(items);
+
+    items.forEach(element => element.classList.remove('hidden'));
+    items.forEach(element => element.classList.add('is-loaded'));
+
+  }, 10);
+
+}
+
+
+
+
+//  ! FUNKCJA UPDATE LOCAL STORAGE:
 
 const store = () => {
   window.localStorage.myitems = list.innerHTML;
@@ -21,16 +42,16 @@ const store = () => {
 const getValues = () => {
 
   let storedValues = window.localStorage.myitems;
-  
+
   if (!storedValues) {
     list.innerHTML = `
-    <li class="list-group-item d-flex justify-content-between align-items-center p-0 mb-1">
+    <li class="list-group-item d-flex justify-content-between align-items-center p-0 mb-1 hidden">
     <span class="px-3 my-3">Add some todos</span><i class="far fa-trash-alt delete p-4"></i></li>
-
-    <li class="list-group-item d-flex justify-content-between align-items-center p-0 mb-1">
+    
+    <li class="list-group-item d-flex justify-content-between align-items-center p-0 mb-1 hidden">
     <span class="px-3 my-3">Make a coffe</span><i class="far fa-trash-alt delete p-4"></i></li>
-
-    <li class="list-group-item d-flex justify-content-between align-items-center p-0 mb-1">
+    
+    <li class="list-group-item d-flex justify-content-between align-items-center p-0 mb-1 hidden">
     <span class="px-3 my-3">Start working:)</span><i class="far fa-trash-alt delete p-4"></i></li>
     `;
   }
@@ -38,13 +59,20 @@ const getValues = () => {
   else {
     list.innerHTML = storedValues;
   }
+
+
+  // funkcja animowania się elementow z listy - pojawianie sie:
+
+  
+
+  appear();
+
 }
 
 getValues();
 
 
-
-//funkcja generowania nowego templatu HTML:
+// ! funkcja generowania nowego templatu HTML:
 
 const generateTemplate = (todo) => {
 
@@ -52,7 +80,7 @@ const generateTemplate = (todo) => {
 
   const html = `
     
-    <li class="list-group-item d-flex justify-content-between align-items-center p-0 mb-1">
+    <li class="list-group-item d-flex justify-content-between align-items-center p-0 mb-1 hidden">
     <span class="px-3 my-3">${todo}</span>
     <i class="far fa-trash-alt delete p-4"></i>
     </li>
@@ -62,6 +90,8 @@ const generateTemplate = (todo) => {
   // wstrzykujemy nowy html:
 
   list.innerHTML += html;
+  appear();
+  store();
 
 
 }
@@ -112,12 +142,16 @@ list.addEventListener('click', e => {
     console.log("clicked");
     e.target.parentElement.remove();
     store();
-    
+
   }
 
 });
 
-// Wyszukiwanie:
+
+
+
+
+// ! Wyszukiwanie:
 
 const filterTodos = (term) => {
   Array.from(list.children)
@@ -149,7 +183,7 @@ const tick = () => {
 
   const now = new Date();
 
-  console.log(dateFns.format(now, 'HH mm'));
+  // console.log(dateFns.format(now, 'HH mm'));
 
 
   const weekday = new Array(7);

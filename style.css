@@ -1,3 +1,9 @@
+html {
+    scroll-behavior: smooth;
+
+}
+
+
 body {
     background-image: url(./img/dawn-1080-3.jpg);
     background-repeat: no-repeat;
@@ -16,6 +22,13 @@ body {
 }
 
 
+/* navbar */
+
+.navbar-custom {
+    background-color: var(--main-txt-color);
+    color: var(--accent-2);
+}
+
 
 input[type="text"],
 input[type="text"]:focus {
@@ -26,6 +39,25 @@ input[type="text"]:focus {
     background: #fcfcfc;
     color: var(--main-txt-color);
 }
+
+/* to ponizej to do animowania listy */
+
+.hidden {
+
+    opacity: 0;
+    transition: opacity 1s;
+
+}
+
+.is-loaded {
+    background: #fcfcfc;
+    color: var(--main-txt-color);
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+/* koniec animacji */
+
 .delete {
     cursor: pointer;
 }
@@ -104,7 +136,7 @@ footer {
 
 .special-link {
     /* margin-bottom: 0.5rem; */
-    padding: 0.5rem;
+    padding: 0.7rem 1.2rem;
 }
 
 .special-link:hover {
@@ -112,7 +144,7 @@ footer {
     color: var(--main-txt-color);
     transition: 0.7s;
     border-radius: 3px;
-    padding: 0.7rem 1.2rem;
+    /* padding: 0.7rem 1.2rem; */
 }
 
 .links-bottom-1 {
@@ -144,4 +176,9 @@ a:hover {
     text-decoration: none;
 }
 
-/* experimental */
+.footer-small {
+    width: 100%;
+    background-color: var(--main-txt-color);
+    color: var(--sky-blue);
+}
+
